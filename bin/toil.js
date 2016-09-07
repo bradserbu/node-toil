@@ -26,15 +26,36 @@ function loadProgram(filepath) {
         filepath = path.join(filepath, 'program.json');
     }
 
-    const json = fs.readJsonSync(filepath);
-    return json;
+    const program = fs.readJsonSync(filepath);
+
+    return Program.load(program);
 }
 
 // Parse the command line arguments
 const argv = yargs
     .usage('$0 <cmd> [args] [options]')
-    .command('run [program]', 'Run a program.', {}, args => {
-        console.log(loadProgram(args.program));
+    .command('run [activity]', 'Run a program activity.', {
+        program: {
+            alias: 'p',
+            default: './program.json',
+            describe: 'Path to the "program.json" file.'
+        }
+    }, argv => {
+        const program = argv.program;
+        const activity = argv.activity;
+
+        const args = argv._;
+
+        logger('PROGRAM', argv.program);
+        logger('ACTIVITY', argv.activity);
+        logger('ARGS', argv.args);
+
+        // Load the program then run a command and exit
+        loadProgram(program)
+            .then(program => {
+                logger('RUN', activity);
+                return program.run(activity, args);
+            });
     })
     .help()
     .argv;
