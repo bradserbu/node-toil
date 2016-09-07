@@ -1,0 +1,18 @@
+{
+  "name": "toil",
+  "version": "1.0.0",
+  "description": "Framework for executing workloads in NodeJS.",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradserbu/node-toil.git"
+  },
+  "author": "Brad Serbu <bradserbu@bradserbu.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/bradserbu/node-toil/issues"
+  },
+  "homepage": "https://github.com/bradserbu/node-toil#readme"
+}
