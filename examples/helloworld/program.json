@@ -1,0 +1,17 @@
+{
+  "name": "helloworld",
+  "description": "Say hello to the user.",
+  "activities": {
+    "sayhello": {
+      "description": "Issue a greeting to the user.",
+      "parameters": {
+        "name": {
+          "type": "string",
+          "description": "The name of the user to greet.",
+          "required": true,
+          "default": "World"
+        }
+      }
+    }
+  }
+}

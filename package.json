@@ -2,9 +2,8 @@
   "name": "toil",
   "version": "1.0.0",
   "description": "Framework for executing workloads in NodeJS.",
-  "main": "index.js",
-  "scripts": {
-  },
+  "main": "bin/toil.js",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bradserbu/node-toil.git"
@@ -14,5 +13,10 @@
   "bugs": {
     "url": "https://github.com/bradserbu/node-toil/issues"
   },
-  "homepage": "https://github.com/bradserbu/node-toil#readme"
+  "homepage": "https://github.com/bradserbu/node-toil#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "fs-extra": "^0.30.0",
+    "yargs": "^5.0.0"
+  }
 }
